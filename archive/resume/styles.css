@@ -1,0 +1,267 @@
+/* Variables */
+:root {
+  --bg-site: #fcfcfc;
+  --grad-purple: hsl(290, 45%, 38%);
+  --grad-blue: hsl(254, 64%, 40%);
+  --pic-dimensions: 5em;
+}
+
+/* Typography */
+html {
+  font-family: 'Exo', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Yrsa', serif;
+}
+
+ul {
+  padding-left: 1em;
+}
+
+.site h2 {
+  text-transform: uppercase;
+  border-bottom: solid 1px #d1d1d1;
+}
+
+.site-title {
+  font-size: 3.5em;
+  line-height: 1;
+  text-align: center;
+}
+
+.content a {
+  color: var(--grad-purple);
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) 300ms;
+}
+
+.content a:hover {
+  color: var(--grad-blue);
+}
+
+.text-group {
+  margin: 1em 0;
+}
+
+.text-group h3,
+.text-group small {
+  margin: 0;
+}
+
+/* Layout Styles */
+body {
+  background: var(--bg-site);
+  margin: 0;
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+}
+
+.site {
+  display: flex;
+  padding: 0 1em 0 4.5em;
+}
+
+aside {
+  position: fixed;
+  overflow: hidden;
+  left: 0;
+  background: linear-gradient(135deg, var(--grad-purple) 0, var(--grad-blue) 100%);
+  min-width: 3.5em;
+  height: 100vh;
+  border-right: solid 2px #333;
+}
+
+main {
+  margin: 0 auto;
+}
+
+@media (min-width: 749px){
+  .container {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.content {
+  max-width: 600px;
+}
+
+@media (min-width: 749px){
+  .contents-list {
+    margin-left: 1em;
+    width: 12rem;
+  }
+}
+
+/* Component Styles */
+#preLoader {
+  position: fixed;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--grad-purple) 0, var(--grad-blue) 100%);
+}
+
+.loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+  margin: -50px 0 0 -50px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #da10da;
+  animation: spin 2s linear infinite;
+  z-index: 1001;
+}
+
+.loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #da10da;
+  animation: spin 3s linear infinite;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #da10da;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0%   { 
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.my-photo {
+  position: fixed;
+  overflow: hidden;
+  z-index: 100;
+  border: solid 3px #333;
+  border-radius: 100%;
+  top: 0.5em;
+  left: -0.7em;
+  width: var(--pic-dimensions);
+  height: var(--pic-dimensions);
+}
+
+.name {
+  position: absolute;
+  z-index: -1;
+  margin: 0;
+  transform: rotate(-0.25turn) translate3d(-275px,-260px,0);
+  width: 585px;
+  font-size: 6rem;
+  opacity: 0.1;
+  color: white;
+}
+
+.my-links {
+  position: absolute;
+  bottom: 0.5em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-links a {
+  display: block;
+  margin: 0.2em 0;
+  font-size: 2em;
+  color: var(--bg-site);
+}
+
+.contents-list ol {
+  padding: 0;
+  list-style: none;
+}
+
+.contents-list li a {
+  display: block;
+  box-sizing: border-box;
+  padding: 0.3em 1em;
+  border-left: solid 0.3em var(--grad-purple);
+  text-decoration: none;
+  font-family: 'Yrsa', serif;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  color: black;
+  transition: ease-in 100ms;
+}
+
+.contents-list li a:hover {
+  border-left-width: 0.5em;
+}
+
+.photo-collection {
+  margin: 1em 0;
+}
+
+.photo {
+  background: white;
+  padding: 0.3em;
+  border: solid 1px #ccc;
+  margin: 1em 0;
+  box-shadow: 0px 0px 5px #ccc;
+  box-sizing: border-box;
+}
+
+.photo img {
+  display: block;
+}
+
+@media (min-width: 600px) {
+  .photo-collection {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1em;
+  }
+
+  .photo {
+    margin: 0;
+  }
+}
+
+/* Utility Styles */
+.loading {
+  left: -6em;
+}
+
+.el-trans {
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) 300ms;
+}
+
+.preload-stop {
+  opacity: 0;
+}
+
+@media (min-width: 749px){
+  .fixed {
+    position: fixed;
+    top: 0;
+  }
+}

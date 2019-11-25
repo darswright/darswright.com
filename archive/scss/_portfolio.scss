@@ -1,0 +1,64 @@
+// Styling for the portfolio section
+.portfolio-box {
+  position: relative;
+  display: block;
+  max-width: 650px;
+  margin: 0 auto;
+  .portfolio-box-caption {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: $white;
+    background: rgba(darken($primary, 50%), 0.3);
+    @include transition-all;
+    .portfolio-box-caption-content {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+      text-align: center;
+      .project-category,
+      .project-name {
+        padding: 0 15px;
+        @include sans-serif-font;
+      }
+      .project-category {
+        font-size: 34px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      // .project-name {
+      //   font-size: 18px;
+      // }
+    }
+  }
+  // &:hover {
+  //   .portfolio-box-caption {
+  //     opacity: 1;
+  //   }
+  // }
+  &:focus {
+    outline: none;
+  }
+  @media (min-width: 768px) {
+    .portfolio-box-caption {
+      .portfolio-box-caption-content {
+        .project-category {
+          font-size: 44px;
+        }
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    .portfolio-box-caption {
+      .portfolio-box-caption-content {
+        .project-category {
+          font-size: 54px;
+        }
+      }
+    }
+  }
+}
