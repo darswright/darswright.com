@@ -48,7 +48,7 @@ export default function Contact(props) {
                 <label htmlFor="contactEmail">
                   Email <span className="required">*</span>
                 </label>
-                <input type="text" size="35" id="contactEmail" name="contactEmail" />
+                <input type="email" size="35" id="contactEmail" name="contactEmail" />
               </div>
 
               <div>
