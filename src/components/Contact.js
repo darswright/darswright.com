@@ -36,6 +36,7 @@ export default function Contact(props) {
       <div className="row">
         <div className="eight columns">
           <form id="contactForm" name="contactForm" netlify>
+            <input type="hidden" name="contactForm" value="contactForm" />
             <fieldset>
               <div>
                 <label htmlFor="contactName">
