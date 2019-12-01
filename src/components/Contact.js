@@ -35,7 +35,7 @@ export default function Contact(props) {
 
       <div className="row">
         <div className="eight columns">
-          <form action="" method="post" id="contactForm" name="contactForm">
+          <form id="contactForm" name="contactForm" netlify>
             <fieldset>
               <div>
                 <label htmlFor="contactName">
