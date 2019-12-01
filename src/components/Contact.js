@@ -3,14 +3,16 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-export default function Contact() {
+export default function Contact(props) {
+  const data = props.resumeData
+
   const envelopeIcon = {
     paddingRight: '10px',
     fontSize: '72px',
     lineHeight: '72px',
     textAlign: 'left',
     color: '#ebeeee'
-  };
+  }
 
   return (
     <section id="contact">
@@ -50,21 +52,16 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="contactSubject">Subject</label>
-                <input type="text" size="35" id="contactSubject" name="contactSubject" />
-              </div>
-
-              <div>
                 <label htmlFor="contactMessage">
                   Message <span className="required">*</span>
                 </label>
-                <textarea cols="50" rows="15" id="contactMessage" name="contactMessage" />
+                <textarea cols="50" rows="10" id="contactMessage" name="contactMessage" />
               </div>
 
               <div>
                 <button className="submit">Submit</button>
                 <span id="image-loader">
-                  <img alt="" src="./assets/images/loader.gif" />
+                  <img alt="Loading" src="./assets/images/loader.gif" />
                 </span>
               </div>
             </fieldset>
@@ -81,38 +78,10 @@ export default function Contact() {
           <div className="widget widget_contact">
             <h4>Address and Phone</h4>
             <p className="address">
-              Jonathan Doe<br />
-              1600 Amphitheatre Parkway <br />
-              Mountain View, CA 94043 US<br />
-              <span>(123) 456-7890</span>
+              {data.name}<br />
+              {data.address}<br />
+              <span>{data.email}</span>
             </p>
-          </div>
-
-          <div className="widget widget_tweets">
-            <h4 className="widget-title">Latest Tweets</h4>
-
-            <ul id="twitter">
-              <li>
-                <span>
-                  This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean
-                  sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
-                  <a href="#">http://t.co/CGIrdxIlI3</a>
-                </span>
-                <b>
-                  <a href="#">2 Days Ago</a>
-                </b>
-              </li>
-              <li>
-                <span>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                  <a href="#">http://t.co/CGIrdxIlI3</a>
-                </span>
-                <b>
-                  <a href="#">3 Days Ago</a>
-                </b>
-              </li>
-            </ul>
           </div>
         </aside>
       </div>
