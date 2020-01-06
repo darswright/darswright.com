@@ -35,7 +35,7 @@ export default function Contact(props) {
 
       <div className="row">
         <div className="eight columns">
-          <form id="contactForm" name="contactForm" netlify>
+          <form id="contactForm" name="contactForm" method="post" netlify>
             <input type="hidden" name="contactForm" value="contactForm" />
             <fieldset>
               <div>
@@ -56,11 +56,11 @@ export default function Contact(props) {
                 <label htmlFor="contactMessage">
                   Message <span className="required">*</span>
                 </label>
-                <textarea cols="50" rows="10" id="contactMessage" name="contactMessage" />
+                <textarea cols="50" rows="4" id="contactMessage" name="contactMessage" />
               </div>
 
               <div>
-                <button className="submit">Submit</button>
+                <button className="submit" type="submit">Submit</button>
                 <span id="image-loader">
                   <img alt="Loading" src="./assets/images/loader.gif" />
                 </span>

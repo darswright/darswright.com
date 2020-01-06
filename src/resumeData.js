@@ -3,7 +3,7 @@ let resumeData = {
   "name": "Simon Wright",
   "role": "Frontend Developer",
   "number": "0481 270 550",
-  "roleDescription": "I like to dabble in various parts of frontend web development and like to learn about new technologies.",
+  "roleDescription": "I like to dabble in frontend web development and learn about new web technologies.",
   "socialLinks": [
       {
         "name":"linkedin",
@@ -108,7 +108,7 @@ let resumeData = {
   "skillsDescription":"I focus heavily on front-end development. The front-end world has evolved so rapidly over the last few years it's almost terrifying! But at the same time I find it so interesting and am excited by how far it's come and where it's heading.",
   "skills":[
     {
-      "skillname": "HTML5",
+      "skillname": "HTML",
       "class": "html5"
     },
     {
